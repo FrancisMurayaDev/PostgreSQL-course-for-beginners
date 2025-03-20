@@ -135,6 +135,10 @@ We will see:
 
 <img src="./img/table1.png" alt="Table">
 
+To see tables only use:
+
+>\dt
+
 The reason we have the `person_id_seq` is because of the `BIGSERIAL` that we created. Its an auto eight-byte increment number.
 
 >\d person
