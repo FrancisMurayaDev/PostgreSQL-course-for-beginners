@@ -44,5 +44,15 @@ In the NUMERIC(19,2) data type:
 
 > (The backslash \ before $ ensures it's treated as a literal character.)
 
+import the table in our `test` database:
+
+>  \i 'C:/Users/Muraya Francis/Desktop/psql-scripts/car.sql'
+
+> IMPORT * FROM car;
+
+<img src="./img/car-list.png" alt="car list">
+
+
+
 
 
