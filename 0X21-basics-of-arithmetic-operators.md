@@ -53,5 +53,3 @@ SELECT 10 % 3;
 ```
 
 The result will be: 1.
-
-
