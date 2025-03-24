@@ -55,7 +55,7 @@ test=# ALTER TABLE person DROP CONSTRAINT person_pkey;
 
 Now when we describe our table, there will be no primary key.
 
-Now when I try to insert the same person, it will now work. 
+Now when I try to insert the same person, it will now work.
 
 <img src="./img/key4.png" alt="table" />
 
@@ -64,9 +64,81 @@ We will have a list of 2 people. With exact same `id` and other details.
 
 <img src="./img/key5.png" alt="table" />
 
-It will be impossible to uniquely identify this people, because they have the same `id`. 
+It will be impossible to uniquely identify this people, because they have the same `id`.
 
 - It is therefore important to have an ID as a primary key.
 
 Unique values help identify a record in a table.
 
+# Adding Primary Key
+
+Lets add the primary key back.
+
+- When we dropped the constraint/primary key, we simply said `ALTER TABLE person DROP CONSTRAINT actual_constraint_name`.
+
+- Primary key receives an array of values since it can be composed based on multiple columns.
+
+- For us, we just need the id.
+
+- Now to add a primary key, we say `ALTER TABLE person ADD PRIMARY KEY(id) `
+
+However, this
+
+```
+ALTER TABLE person ADD PRIMARY KEY(id);
+```
+
+will not work.
+
+```
+
+test=# ALTER TABLE person ADD PRIMARY KEY(id);
+ERROR:  could not create unique index "person_pkey"
+DETAIL:  Key (id)=(1) is duplicated.
+```
+
+The reason is, we cannot add a primary key when the rows are not unique in our table.
+
+When we
+
+> SELECT \* FROM person WHERE id = 1;
+
+We will see two people with the same ID.
+
+To deal with this, we need to delete the 2 people.
+
+### How to delete from a table.
+
+```sql
+ DELETE FROM person WHERE id = 1;
+```
+
+Since we have 2 people with the same `id`, it will delete the 2 rows.
+
+Now if we select where ID is equal to 1, we wil have 0 rows.
+
+```sql
+test=# SELECT * FROM person WHERE id = 1;
+```
+
+Now we are sure that the id column should be unique in our table.
+
+Lets go ahead and add the person whose `id` was 1.
+
+- Now lets add the primary key constraint.
+
+```sql
+test=# ALTER TABLE person ADD PRIMARY KEY (id);
+
+ALTER TABLE
+```
+
+This time it is going to work. Because the id's are now unique in the table.
+
+When we now describe the table,
+
+> \d person
+
+We should now see our primary key.
+
+- If you want to add a primary key, make sure the column that you want to be the primary key is unique in every single row.
