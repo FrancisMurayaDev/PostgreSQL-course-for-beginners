@@ -54,3 +54,19 @@ test=# ALTER TABLE person DROP CONSTRAINT person_pkey;
 ```
 
 Now when we describe our table, there will be no primary key.
+
+Now when I try to insert the same person, it will now work. 
+
+<img src="./img/key4.png" alt="table" />
+
+Now when we select all from person where the id is 1.
+We will have a list of 2 people. With exact same `id` and other details.
+
+<img src="./img/key5.png" alt="table" />
+
+It will be impossible to uniquely identify this people, because they have the same `id`. 
+
+- It is therefore important to have an ID as a primary key.
+
+Unique values help identify a record in a table.
+
