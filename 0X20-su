@@ -18,3 +18,4 @@ SELECT make, SUM(price) FROM car GROUP BY make;
 ```
 
 You will see the total sum of all makes.
+
