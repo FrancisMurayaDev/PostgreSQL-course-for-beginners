@@ -6,21 +6,20 @@ Important aggregate functions that we will use:
 - min
 - max
 
-Lets go to Mockaroo and generate a new table. 
+Lets go to Mockaroo and generate a new table.
 
 <img src="./img/car-table.png" alt="car-table">
 
 Go ahead, download or generate data.
 
-- You can adjust the price to be within a sensible range. 
+- You can adjust the price to be within a sensible range.
 
 ```sql
 \i 'C:/Users/Muraya Francis/Desktop/psql-scripts/car.sql';
 ```
 
-
 - psql does not recognize $ as a numeric value.
-- It might lead into error. So in VS code, select all `$` and replace with nothing. 
+- It might lead into error. So in VS code, select all `$` and replace with nothing.
 
 <img src="./img/car-sql.png" alt="sql">
 
@@ -32,7 +31,6 @@ In the NUMERIC(19,2) data type:
 19 → The total number of digits (precision) allowed, including both sides of the decimal point.
 2 → The number of decimal places (scale) after the decimal point.
 ```
-
 
 > CRTL + H to find and replace
 
@@ -46,13 +44,8 @@ In the NUMERIC(19,2) data type:
 
 import the table in our `test` database:
 
->  \i 'C:/Users/Muraya Francis/Desktop/psql-scripts/car.sql'
+> \i 'C:/Users/Muraya Francis/Desktop/psql-scripts/car.sql'
 
-> IMPORT * FROM car;
+> IMPORT \* FROM car;
 
 <img src="./img/car-list.png" alt="car list">
-
-
-
-
-

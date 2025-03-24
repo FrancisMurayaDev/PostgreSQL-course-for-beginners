@@ -3,11 +3,11 @@
 - Allow us to perform maths.
 - We can use our data set to produce some results or statistics that we want.
 
-## Addition 
+## Addition
 
 ```SQL
 SELECT 10 + 2;
-````
+```
 
 The result will be 12.
 
@@ -16,6 +16,7 @@ The result will be 12.
 ```sql
 SELECT 10 - 2;
 ```
+
 The result will be 8.
 
 ## Multiplication
@@ -31,21 +32,25 @@ The result will be 20.
 ```sql
 SELECT 10 / 2;
 ```
+
 The result will be 5.
 
 ## Power
+
 SELECT 10 ^ 2;
 
 The result wil be 100.
 
-## Factorial 
+## Factorial
+
 > 5! = 5 × 4 × 3 × 2 × 1 = 120
 
 ```SQL
 SELECT FACTORIAL(5);
 ```
 
-## MODULUS 
+## MODULUS
+
 - Gets the reminder after a division.
 
 ```sql
